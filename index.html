@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Doodle-Quickie</title>
+    <meta name="author" content="Jamie Maguire"/>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+        <h1>Doodle-Quickie</h1>
+        <h4>Unleash your inner doodles upon the web!</h4>
+    </header>
+    <main>
+        <canvas id="draw" width="800" height="800"></canvas>
+    </main>
+    <footer>
+        <nav class="controls">
+          <ul class="controls_list">
+            <li class="controls_listItem">
+              <input id="slider" type="range" min="1" max="100"/>
+              Brush Size
+            </li>
+             <li class="controls_listItem">
+               <label id="colorWrapper">
+                 <input id="color" value="#705BFF" type="color"/>
+               </label>
+               Brush Colour
+            </li>
+            <li class="controls_listItem">
+              <label class="switch">
+                <input id="shape" type="checkbox"/>
+                <div class="slider round"></div>
+              </label>
+              Circle / Square
+            </li>
+            <li class="controls_listItem">
+              <a id="download"><i class="icon ion-ios-download-outline"></i></a>
+              Download PNG
+            </li>
+            <li class="controls_listItem">
+              <button id="clear" class="clear"><i class="icon ion-ios-close-outline"></i></button>
+              Clear Canvas
+            </li>
+          </ul>
+        </nav>
+    </footer>
+    <script src="module.js"></script>
+</body>
+</html>
