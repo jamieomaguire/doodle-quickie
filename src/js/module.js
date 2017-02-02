@@ -18,7 +18,7 @@ const drawableCanvas = (function() {
 
     // Assign a height and width to the canvas element
     canvasObj.el.width = window.innerWidth;
-    canvasObj.el.height = window.innerHeight - 280;
+    canvasObj.el.height = window.innerHeight - 180;
 
     // Grab canvas context
     canvasObj.ctx = canvasObj.el.getContext('2d');
@@ -147,5 +147,20 @@ const drawableCanvas = (function() {
     canvasObj.el.addEventListener('mouseup', () => drawing.isDrawing = false );
 
     canvasObj.el.addEventListener('mouseout', () => drawing.isDrawing = false);
+
+    // Touch screen
+    Draw function is called when mouse is moved over canvas
+    canvasObj.el.addEventListener('touchmove', (e) => {
+        drawing.isDrawing = true;
+        [drawing.lastX, drawing.lastY] = [e.offsetX, e.offsetY];
+        console.log(drawing.lastX + ' ' + drawing.lastY);
+    });
+
+    // Various events clicked and holding the mouse down whilst moving will draw
+    canvasObj.el.addEventListener('touchmove', drawing.draw);
+
+
+    // Releasing the mouse or moving off the canvas will cancel the drawing
+    canvasObj.el.addEventListener('touchend', () => drawing.isDrawing = false );
 
 })();
